@@ -1,0 +1,17 @@
+---
+title: "Being Everything, Everywhere, All at Once:"
+subtitle: "Expanding SRL situational awareness by leveraging open-source software"
+---
+
+David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2
+
+1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA
+
+Operating a shared-resource facility is the art of daily handling issues as they arise without having a complete meltdown. The amount of effort required to maintain this equilibrium incrementally increases with number of instruments, complexity of samples, panels, and skill. Given scarcely have time to think, much less eat, how to get ahead curve and stage intervention when required? Having additional tools to monitor while useful, should not impose additional burden on staff.
+
+Over the last 18 months, we have designed and implemented customized/tailored monitoring for the instruments at our core using open-source software (R, Python and Rust). Allowed us to improvise and go beyond limits that any individual vendor implemented. Allows not only awareness of impending issues, but allows for pro-active interventions to save facility users countless hours of wasted reagents and experiments. 
+
+These include monitoring cancellation/reservation, user usage patterns over time, identification markers and fluorophores, cell sorter stability, sterility checks, debris build up in fluidics lines. We emphasize how tackling these piecemeal enabled orchestration situational awareness at scale scarcely imaginable just a few years ago. 
+
+Leveraging existing computational resources, included small motherboard computers and salvaged planned obsolescence Windows 10 computers, we sequentially implemented enhanced monitoring for all our cytometers. 
+
