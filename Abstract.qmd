@@ -1,18 +1,19 @@
 ---
-title: "Being Everything, Everywhere, All at Once:"
-subtitle: "Expanding SRL situational awareness by leveraging open-source software"
+format: docx
 ---
+
+Being Everything, Everywhere, All at Once: Open-Source Automation for Situational Awareness in SRLs
 
 David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2
 
 1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA
 
-Operating a flow cytometry shared resource laboratory (SRL) is the art of daily handling issues as they arise, while staying situationally aware enough to avoid a complete meltdown. The amount of effort required by staff to maintain this equilibrium is proportional to the number of instruments, complexity of samples, panels, and user skills. Given that time is a precious commodity, tools that can provide timely situational awareness of impending issues and thus permit a staged intervention are highly desirable. With the current fiscal environment, free and open-source software tools could assist these efforts, but need to be not impose significant additional burden on the staff to be worth the effort to implement. 
+Operating a flow cytometry shared resource laboratory (SRL) is the art of daily handling issues as they arise, while staying situationally aware enough to avoid a complete meltdown. Given that time is a precious commodity, tools that can provide timely situational awareness of impending issues and thus permit a staged intervention are highly desirable. With the current fiscal environment, free and open-source software tools could assist these efforts, but need to not impose significant additional burden on the staff. 
 
-Over the last 18 months, we have sequentially designed and implemented enhanced monitoring tools for all the instruments at our core, using open-source software (R, Python and Rust). These have utilized existing computational resources (as well as computers repurposed following Windows 10 end-of-life) with automation scheduled for off-peak hours to survey for a range of issues across all acquired .fcs files. 
+Over the last 18 months, we have sequentially designed and implemented enhanced monitoring tools for all the instruments at our core, using open-source software (R, Python and Rust). These have utilized existing computational resources (as well as computers repurposed following Windows 10 end-of-life) with automation scheduled for off-peak hours to survey for a range of issues across all acquired experiment and .fcs files. 
 
-These tools have collectively enabled us to monitor user and laboratory instument usage over time, monitor cancellations and altered reservations,  build a database of markers and fluorophores by users, and determine their panels respective stain indexes and unmixing-dependent spreading (UDS) hotspots. Similarly, reports back instrumental QC metrics, classifies and records frequency of returned errors in cytometer logs, remaining computer storage space and occupancy by user, cell sorter nozzle stability, debris build up in fluidic lines, and implement spot checks of individual .fcs files for multiple autofluorescences and tandem fluorophore degradation. 
+These tools have collectively enabled us to monitor user/laboratory instrument usage over time, track cancellations and altered reservations, build a database of markers and fluorophores by users, and determine their panels respective stain indexes and unmixing-dependent spreading (UDS) hotspots. The system spot checks unmixing controls to identify multiple autofluorescences and tandem fluorophore degradation, with a similar process monitoring for debris build up in the fluidic lines. Additionally, the system reports computer storage space occupancy by user, processes the cytometer logs to classify and record the frequency of returned errors, visualizes instrument QC metrics, as well as tracks cell sorter specific metrics by nozzle. 
 
-This has permitted us to improvise, enhanced awareness of impending cytometer issues, and to go beyond constraints of information provided by any individual vendor. It has also permitted pro-actively stage interventions by reaching out to users before countless hours of wasted reagents and experiments at a scale we scarcely imagined just a few years ago. 
+This framework has expanded our situational awarenes beyond what any individual vendor system can provide. It has allowed staff to intervene proactively—reaching out to users before substantial time, samples, and reagents are wasted—at a scale that would have seemed implausible only a few years ago. By standardizing oversight, reducing operator-dependent variability, and documenting performance trends, the system strengthens rigor and reproducibility across SRL workflows. 
 
 We emphasize the piecemeal nature of our implementation, highlight what worked well and and offer lessons learned from our experience in pursuit to orchestrate situational awareness in an SRL environment. 
