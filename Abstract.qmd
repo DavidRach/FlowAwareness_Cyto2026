@@ -4,9 +4,7 @@ format: docx
 
 Being Everything, Everywhere, All at Once: Open-Source Automation for Situational Awareness in SRLs
 
-David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2
-
-1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA
+David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2 1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA
 
 Operating a flow cytometry shared resource laboratory (SRL) is the art of daily handling issues as they arise, while staying situationally aware enough to avoid a complete meltdown. Given that time is a precious commodity, tools that can provide timely situational awareness of impending issues and thus permit a staged intervention are highly desirable. With the current fiscal environment, free and open-source software tools could assist these efforts, but need to not impose significant additional burden on the staff. 
 
