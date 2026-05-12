@@ -1,0 +1,56 @@
+---
+title: "Planning"
+format: html
+---
+
+Flow Awareness Talk - Everything Everywhere All at Once
+
+# Slide 1
+
+- Running a small SRL, situationally aware. 5 minutes from meltdown, threading water. 
+- Handling issues as they arise. 
+- time is precious
+- ability to prempt issues, cost vs. value, burden on staff, tradeoff.
+- in this fiscal environment. 
+
+# Slide 2
+
+- What we are doing, monitoring tools
+- Free and open source, R, Python and Rust. 
+- Exisiting and repurposed computational resources from Windows 10 
+- automation/CI
+
+# Slide 3
+- A piecemeal project approach. 
+- Usage over time plots, instrument and users. hard metrics
+- Automatically updating, Warnings cancellations/alterations
+- Instrument log parsing for minutes
+
+# Slide 4
+- While parsing logs, might as well parse .expt files too, monitor computer space
+- Database of markers and fluors, who needs XYZ antibody?
+- Pass through hotspot calculator, changes panels over time
+- Parse the reference controls for Luciernaga for AF
+- Parse for tandem breakdown
+
+# Slide 5 
+- Fluidics error logs enhanced QC
+- Bead degradatation
+- Cytometer errors
+- QC
+- Sorter metrics as well, nozzles
+- Sterility tracking
+- CytometryQC
+- In progress - temperature monitors
+
+# Slide 6
+- Extended awareness, proactive defense, offense
+- tailored piece meal
+- still upkeep, iteration improvement, interventions
+- value added
+- sharing our existing ccode, not all needed, but not starting from scratch
+- CytometryQC
+- CytometryInR
+
+
+
