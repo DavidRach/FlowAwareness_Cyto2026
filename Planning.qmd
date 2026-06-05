@@ -3,25 +3,61 @@ title: "Planning"
 format: html
 ---
 
-Flow Awareness Talk - Everything Everywhere All at Once
+# Title Slide
+
+Everything, Everwhere, All At Once - open-source automation for enhanced situational awareness at a Shared Resource Laboratory
+
+Authors, UMGCCCC logo, ISAC recognized SRL, Date
 
 # Slide 1
 
-- Running a small SRL, situationally aware. 5 minutes from meltdown, threading water. 
-- Handling issues as they arise. 
-- time is precious
-- ability to prempt issues, cost vs. value, burden on staff, tradeoff.
-- in this fiscal environment. 
+Working at a small SRL, on a good day, your workflow is routine. You show up, you change the sheathe and waste, you turn on your instruments, you get them through flushing out the fluidics, you run QC, you finally get time for your second cup of coffee. The rest of the day is split between sorts, training new users, consulting on panels, bizarre experimental results, etc. 
 
 # Slide 2
 
-- What we are doing, monitoring tools
-- Free and open source, R, Python and Rust. 
-- Exisiting and repurposed computational resources from Windows 10 
-- automation/CI
+That is on a good day. But as we all know, other days, our Cytometers choose violence. Everything that can go wrong, does, and you are left fighting for dear life to get everything back into a stable enough place that. 
 
 # Slide 3
-- A piecemeal project approach. 
+
+Since we are in Florida, lets take this analogy to the beach. Most days, you are threading water. On those days, you are being battered by the waves that are intent on drowning you. 
+
+# Slide 4
+
+These have a cost. Your instrument is down, requiring time to schedule preventative maintenance, adding to staff burden
+
+The instrument is down, so not earning its keep, which is about to also get expensive
+
+The instrument is down, your users plans get disrupted and pushed back. Repeatedly over time. 
+
+The instrument is failing, poorer data outcomes, loss of precious samples, resources, and need to repeat. More consults trying to make sense of the data, more of our time with our families going out the window. Only so many hours in the day.
+
+And are harder to define cost. We know of examples where reputation takes hit, hard to earn back the trust after lost.
+
+# Slide 5
+
+We have a tendency to treat these moments as "Acts de force majeur". But the waves that drown you don't materialize out of nowhere. Instruments in laser decline leave signs on your acquired data. Gunk build up in the fluidic lines does as well. damaged qc beads have changes in MFI and spread. tandems that break down have unique signature variants. There is invaluable data already being acquired on our instruments that if we could only leverage could give us a heads up
+
+# Slide 6
+
+And while manufactureres and vendors have different warning systems, not end all be all. Early warnings sound nice, but what is the catch, and what is the price, because God knows your admin is going to want a better justification for that kind of expense. But what if, you never had to ask them or shell out in the first place. What if you just did it. Not all at once, but piecemeal, separate fixes for separate instruments
+
+# Slide 6 
+
+This is our journey at the UMGCCC FCSR, on our quest to try to implement systems in place to provide us some warning in advance, to make these hell in a handbasket days less frequent. 
+
+# Slide 7
+
+- How are we doing it?
+- Free and open source, R, Python and Rust. 
+- Exisiting and repurposed computational resources from Windows 10 
+- automation/CI infrastructure. 
+
+
+
+
+
+
+# Slide 3
 - Usage over time plots, instrument and users. hard metrics
 - Automatically updating, Warnings cancellations/alterations
 - Instrument log parsing for minutes
