@@ -5,88 +5,186 @@ format: html
 
 # Title Slide
 
-Everything, Everwhere, All At Once - open-source automation for enhanced situational awareness at a Shared Resource Laboratory
+Everything, Everwhere, All At Once - Open-source Automation for Enhanced Situational Awareness at a Shared Resource Laboratory
 
-Authors, UMGCCCC logo, ISAC recognized SRL, Date
+by 
+
+David Rach, Natarajan Ayithan, Xiaoxuan Fan
+
+June 7, 2026
 
 # Slide 1
 
-Working at a small SRL, on a good day, your workflow is routine. You show up, you change the sheathe and waste, you turn on your instruments, you get them through flushing out the fluidics, you run QC, you finally get time for your second cup of coffee. The rest of the day is split between sorts, training new users, consulting on panels, bizarre experimental results, etc. 
+As many of us know, a good day at a small SRL develops a routine. 
+
+We show up, we change the sheathe and waste, power on the instruments, flush out the fluidics, run QC, and get around to our third cup of coffee. The rest of the day is split between cell sorts, training new users, building panels, and spending way too much dive diving into a curious experimental result. 
+
+But that of course, is on a good day. As we all know, on other days
 
 # Slide 2
 
-That is on a good day. But as we all know, other days, our Cytometers choose violence. Everything that can go wrong, does, and you are left fighting for dear life to get everything back into a stable enough place that. 
+Our cytometers choose violence! Everything that can go wrong does, and next thing you know, you are fighting for your life, trying to get your engineer scheduled, every upset user rescheduled, and wondering how many years this job is taking off your life. 
 
 # Slide 3
 
-Since we are in Florida, lets take this analogy to the beach. Most days, you are threading water. On those days, you are being battered by the waves that are intent on drowning you. 
+While we often shrug these days off as a reality of the job, long-term, there are cost. 
+
+When your instrument goes down, that is staff time that needs to be reprioritized towards getting it resurfaced
+
+When the instrument is down, you are not earning income. And those service contracts ain't paying themselves. 
+
+And when an instrument goes down, your users can't run experiments. 
+
+Worse, if the instrument is silently failing, data suffers, experiments need to be run (assuming it wasn't a one-of-a-kind-clinical sample), and carefully laid schedules get scrunched as deadlines approach. 
+
+More consults trying to make sense of the data, more of our time with our families going out the window. Only so many hours in the day.
+
+And a certain point, it has a harder to define cost. The shared-resource facility model is a tight ship, and when reputation takes a hit, it is hard to earn back trust. 
 
 # Slide 4
 
-These have a cost. Your instrument is down, requiring time to schedule preventative maintenance, adding to staff burden
+Alternatively, since we are in Florida, a good day is threading water, a bad day is keeping your head above water as wave-after-wave crashes down. While they may appear so, not all of those waves materialized out of nowhere. 
 
-The instrument is down, so not earning its keep, which is about to also get expensive
+Instruments with laser decline leave signs in the acquired data. So does gunk build-up in the fluidic lines. Bleach damaged QC beads exhibit changes in MFI and the %RCV spread. Tandems that break down leave intermediates. In the data an average facility acquires, there is a wealth of data, we just don't have the tools of bandwidth to leverage it out of the morass of data acquired daily. 
 
-The instrument is down, your users plans get disrupted and pushed back. Repeatedly over time. 
-
-The instrument is failing, poorer data outcomes, loss of precious samples, resources, and need to repeat. More consults trying to make sense of the data, more of our time with our families going out the window. Only so many hours in the day.
-
-And are harder to define cost. We know of examples where reputation takes hit, hard to earn back the trust after lost.
 
 # Slide 5
 
-We have a tendency to treat these moments as "Acts de force majeur". But the waves that drown you don't materialize out of nowhere. Instruments in laser decline leave signs on your acquired data. Gunk build up in the fluidic lines does as well. damaged qc beads have changes in MFI and spread. tandems that break down have unique signature variants. There is invaluable data already being acquired on our instruments that if we could only leverage could give us a heads up
+Starting about 18 months ago, we set out to gradually change this at the UMGCCC FCSR core. As much as this may seem an orchestrated affair, it was not, rather, it is the result of a game of whack-a-mole, but we have developed some useful tools and learned some hard lessons, and we want to share these with you today. 
+
+# Slide 5b
+
+For context, our core consist of three staff, handling 3 auroras, 1 aurora cs, 1 BD Aria II, 1 canto, 1 lsr, 1 amnis flowsight and 1 macsQuant10
+
+While still actively focused on my PhD research, I ended up helping getting our InstrumentQC dashboard which I presented a poster on last year. Basically, every day, before-and-after QC measurements occur, these .fcs files get copied over, processed in R, sent to a GitHub repository, then using a GitHub actions generates these nice interactive plots that we can use to tell Eric or the other amazing Cytek Field Service engineers exactly what issue we are encountering. In turn, this has been expanded out to encompass our legacy BD instruments, as well as our Amnis FlowSight. This in turn makes it a lot easier to spot the characteristic peaks of laser gains going up, and what allowed us to pinpoint and address the bleach effect on the 2006 lot beads last year (as described in the poster). We've used this same system to retroactively identify days where beads where damaged, QC didn't fail, and spot the unmixing nightmares that resulted.  So while important to our enhanced awareness, not today's main focus, since this was last year. 
 
 # Slide 6
 
-And while manufactureres and vendors have different warning systems, not end all be all. Early warnings sound nice, but what is the catch, and what is the price, because God knows your admin is going to want a better justification for that kind of expense. But what if, you never had to ask them or shell out in the first place. What if you just did it. Not all at once, but piecemeal, separate fixes for separate instruments
-
-# Slide 6 
-
-This is our journey at the UMGCCC FCSR, on our quest to try to implement systems in place to provide us some warning in advance, to make these hell in a handbasket days less frequent. 
+How did this began? Well, as most of my rabbit-hole stories go, on the Cytometry Discord of course. Alex Wendling in Virginia was trying to extract out spectral signatures directly from a SpectroFlo .Expt file in R. While I knew R, I didn't know the .Expt file could be parsed and deciphered. So I took a loook. 
 
 # Slide 7
 
-- How are we doing it?
-- Free and open source, R, Python and Rust. 
-- Exisiting and repurposed computational resources from Windows 10 
-- automation/CI infrastructure. 
+While we never got a satisfactory answer about what actually was encoded in those spectral spillover keywords, after some tinkering, what I did get back was a way to quickly extract out Fluorophore and Markers from the .Expt file without having to open SpectroFlo. 
 
+What good is that? Well, my immediate question, which one of our users is running the largest panel? Fast forward an additional hour of tinkering with R code, and presto! We could get the .Expt files out of the zipped experiments on the export drive, parse the list, and find out the answer at the time was 34 fluorophores. 
 
+# Slide 8
 
+But now that we had that information, why stop there? One of the main user request for mass emails goes "does anyone have Alexa Fluor 647 anti-human CD163?" As techs, PhDs, post-docs come and go, and antibody vial organization is not our forte, what if we modified our script to just get out that information, place it into a table, and then after the fact we just filter down the .csv for the correct fluorophore and antibody, reducing who we needed to reach out to and ask. 
 
+# Slide 9
 
+Shortly after that, post another Discord conversation, around the time of Peter Mage's pre-print on UDS, we went down a rabbit hole and got ways to take our input list of fluorophores, and derive out the equivalent cosine matrices, and the UDS/collinearity hotspot. 
 
-# Slide 3
-- Usage over time plots, instrument and users. hard metrics
-- Automatically updating, Warnings cancellations/alterations
-- Instrument log parsing for minutes
+At that point, another idea clicked. We all know users who show up with rather bizarre data results. How much of that is simply an output of bad panel design? 
 
-# Slide 4
-- While parsing logs, might as well parse .expt files too, monitor computer space
-- Database of markers and fluors, who needs XYZ antibody?
-- Pass through hotspot calculator, changes panels over time
-- Parse the reference controls for Luciernaga for AF
-- Parse for tandem breakdown
+With another round of tinkering, presto, we provide input fluorophores, and R spits back the cosine plot, the hotspot, the signature and a signature matrix that we can evaluate whether it is inter, intra, or tandem causing the chaos. 
 
-# Slide 5 
-- Fluidics error logs enhanced QC
-- Bead degradatation
-- Cytometer errors
-- QC
-- Sorter metrics as well, nozzles
-- Sterility tracking
-- CytometryQC
-- In progress - temperature monitors
+# Slide 10 
 
-# Slide 6
-- Extended awareness, proactive defense, offense
-- tailored piece meal
-- still upkeep, iteration improvement, interventions
-- value added
-- sharing our existing ccode, not all needed, but not starting from scratch
-- CytometryQC
+And at that point, the sky was fairly open, the questions more time to implement. If we mine every .Expt file that is present on our Auroras, we can tell how panels change over time, we can link these changes to actual data, and infer why changes occured. 
+
+# Slide 11
+
+At this point, this crosses more into an area that Christopher Hall while still back at Babraham explored, namely, can you automate passing the acquired .fcs files through PeacoQC or FlowCut, and send email when there are issues. 
+
+# Slide 12
+
+While fluidic hiccups are an issue, our main data quality issues at our own facility are more unmixing-adjacent. These typically are tandems degrading, additional autofluorescences appearing, summer interns triple staining a single-color control. 
+
+# Slide 13
+
+One of the R packages I built as part of my PhD with Dr. Cristiana Cairo was the Luciernaga package. Which my simplest explanation, is that rather than deriving normalized signatures at the gated population level, does so at the individual cell level, and then groups cells with similar normalized signatures on the basis of shared peaks with equivalent heights. 
+
+# Slide 14
+
+And rather than trying to computationally run the entire acquired datasets, all 100 samples and all, could we just run the cell reference controls? 
+
+And why yes, we can! As a one-off, that wasn't an issue, but took some more jury-rigging for an experiment. But we can evaluate on the basis of these aggregated "variant" normalized signatures when an antibody vial is failing, at which point an intervention can be staged. 
+
+Likewise, we are able to pinpoint marker-fluorophore combinations where the combination is not sufficient to clear autofluorescence, and these leftover autofluorescence peaks cause unmixing issues, that can be cleared up by switching to beads. 
+
+And the same process can be applied for unstaineds, retrieving out variants that are compatible with SpectroFlo for use in unmixing. 
+
+# Slide 15
+
+Having opened all these rabbit-holes, what other wealth can we mine from what otherwise are after-thought files within the cytek folder? 
+
+Well, our friend the ApplicationLog. Did you know that everytime sit-flush is trigerred, it records it? Did you know that when you plot these sit-flushes, you can get back the weekly usage patterns for each instrument at your core? or over the entire instrument lifespan. 
+
+But similarly, beyond retrieving errors, we can similarly infer by the sequence when clean flow cells and fluidic shut downs are run. But sadly, not when the instrument is powered on or off, which cuts into my ability to track laser failure vs on-hours. Until I figure out how to ask the port directly. 
+
+And did you know, you can spot the users who are abusing their "billed hour" priviledges after-hours in the process, for those who might be aware. Unfortunately, no names, but we can cross-check the exported experiment folder. 
+
+# Slide 16
+
+But as always, this spanned its own rabbit-hole. We use iLab for the bookings, and we had questions of instrument usage over time. After some poking-around, I found the data export option. And that was helpful, because with some introductory data tidying skills, we could fuss around and get out the user bookings. 
+
+We could plot experiments by individual user
+
+We can plot experiments by PI 
+
+And better yet, when Dr. Fan ask me to mass email everyone about our Cytek day, I can retrieve all emails from the last 10 years, keep the unique ones, and send them out via a mail merge. 
+
+# Slide 17
+
+But one thing this cannot do, is give back bookings that haven't been confirmed. A daily routine at our core is users asking us if someone is after us on the instrument. Which requires resigning into iLab on our phones, to check, every single day. Which got repetitive. 
+
+# Slide 18
+
+But at this point, once again, Cytometry Discord, Rachel Sheridan asked if there was a way to set up a monitor with the iLab schedule. And poof, down the rabbit hole I went, nerd-snipped yet again. 
+
+And sure enough, as you would suspect, R being a dynamic ecosystem of different areas of interest, once authenticated, there is a way to have Google Chrome retrieve the relavent bits of information, and process it to a tidy format. 
+
+At which point, just needed to repurpose one our our small motherboard computers (Raspberry Pi 4b) and we had a monitor going displaying the schedule for each instrument. At that point, whose next? I don't know, check the monitor. 
+
+# Slide 19
+
+The one thing we haven't managed to solve if someone cancelling last minute, resulting in the instrument being left on over the weekend. One of my current projects was modifying the code so that the raspberry pi sends the data to GitHub, and then setting up the automation to trigger an alert, and send out a targeted email to staff and cancelling user. But certain pesky graduation got in my way. 
+
+# Slide 20
+
+But as you can see, it's rabbit holes all the way down once you get started. 
+
+We run contrad and water every day, these are being processed to help decipher fluidic gunk buildup.
+
+More expertise is needed to decipher cytometer errors vs. actual we can do something about it
+
+Started to venture into the Aurora CS and Aria II sorting files, trying to track nozzle metrics more precisely. 
+
+Sterility tracking
+
+Instrument on and temperature monitors
+
+Repurposing end-of-life Windows 10 computers: Have you met Linux? 
+Speeding things up: Rust
+All-from-one-dashboard? Open-source
+Automation/CI infrastructure. 
+
+# Slide 21
+
+In conclusion, on the other end of this year's projects, we are approaching the point of having more extensive awareness than when we started. We still get splashed by the waves, but we are getting better at seeing them coming right at us, so can brace for impact. 
+
+This was organic, it was piece-meal, driven by particular need at the particular time. And was instrument/manufacturer tailored. 
+
+Cost? Nothing, but takes expertise to make and up keep. However, it has been fun, and once the initial hiccups are worked out, it is easier to implement. 
+
+We are sharing our code, as currently implemented, but still a ways away from generalizing it for everyone, but you are not starting from scratch at least. 
+
+# Slide 22
+
+And if this sounds great and all, but you don't know R, those resources are out and fully-documented
+
 - CytometryInR
+
+# Slide 23
+
+- Bead degradatation
+- QC
+
+
+
+
 
 
 
