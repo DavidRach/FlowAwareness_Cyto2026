@@ -1,0 +1,84 @@
+---
+title: "Untitled"
+format: html
+---
+
+# Setup Code
+
+```{r}
+library(qrcode)
+```
+
+```{r}
+QR_Helper <- function(url, output, filename){
+
+code <- qr_code(url)
+
+TheFileName  <- paste0(filename, ".svg")
+
+StoreHere <- file.path(output, TheFileName)
+
+generate_svg(code, filename = StoreHere)
+#plot(code)
+}
+```
+
+
+# Discord Data Usage Instruments
+
+[Link](https://discord.com/channels/966358489947574322/1318267342307852288/1420230037562593320)
+
+# Rachel NerdSnipe iLab Monitor
+
+[Link](https://discord.com/channels/966358489947574322/1318267342307852288/1420415683375796398)
+
+# Bleach vs Lot 2006
+
+[Link](https://discord.com/channels/966358489947574322/1354666428736733254/1354666431186468985)
+
+# PerCPCy55
+
+[Code](https://stepupcytometry.quarto.pub/percpcy55-degradation-patterns-1bb9/)
+
+[Link](https://discord.com/channels/966358489947574322/1318267342307852288/1340056744197492830)
+
+
+# Discord Cosine
+
+[Link](https://discord.com/channels/966358489947574322/1318267342307852288/1334954679473537034)
+
+# Cytek What Are These
+
+[Link](https://discord.com/channels/966358489947574322/1318267342307852288/1326708346803191879)
+
+[AllUserReferenceControls](https://stepupcytometry.quarto.pub/alluserreferencecontrols/)
+
+[AlexNerdSnipe](https://discord.com/channels/966358489947574322/1318267342307852288/1326658301412249610)
+
+# Luciernaga Signature
+
+[Link](https://stepupcytometry.quarto.pub/signature-comparison/)
+
+[MainVignette](https://davidrach.github.io/Luciernaga/articles/FluorescenceSignatures.html#luciernaga_qc)
+
+# BISCC Day 5
+
+[Link](https://umgccfcss.github.io/BISCC_2025/Day5_5L.html)
+
+# Last Years Poster
+
+[Link](https://github.com/DavidRach/EveningQC_Cyto2025)
+
+# Lot 2006
+
+[Link](https://umgccfcss.github.io/InstrumentQC/BleachVsLot2006Beads.html)
+
+# GitHub Repository
+
+[Link](https://github.com/DavidRach/FlowAwareness_Cyto2026)
+
+```{r}
+QR_Helper(url="https://github.com/DavidRach/FlowAwareness_Cyto2026",
+    output="outputs", 
+    filename="GitHubRepository")
+```
