@@ -27,6 +27,11 @@ Our cytometers choose violence! Everything that can go wrong does, and next thin
 
 # Slide 3
 
+Alternatively, since we are in Florida, a good day is threading water, a bad day is keeping your head above water as wave-after-wave crashes down. 
+
+
+# Slide 3
+
 While we often shrug these days off as a reality of the job, long-term, there are cost. 
 
 When your instrument goes down, that is staff time that needs to be reprioritized towards getting it resurfaced
@@ -43,7 +48,7 @@ And a certain point, it has a harder to define cost. The shared-resource facilit
 
 # Slide 4
 
-Alternatively, since we are in Florida, a good day is threading water, a bad day is keeping your head above water as wave-after-wave crashes down. While they may appear so, not all of those waves materialized out of nowhere. 
+While they may appear so, not all of those waves materialized out of nowhere. 
 
 Instruments with laser decline leave signs in the acquired data. So does gunk build-up in the fluidic lines. Bleach damaged QC beads exhibit changes in MFI and the %RCV spread. Tandems that break down leave intermediates. In the data an average facility acquires, there is a wealth of data, we just don't have the tools of bandwidth to leverage it out of the morass of data acquired daily. 
 
