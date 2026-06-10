@@ -20,7 +20,7 @@ We emphasize the piecemeal nature of our implementation, highlight what worked w
 
 This is the repository for our Cyto 2026 "Open-source Automation for Situational Awareness in SRLs" parallel talk.  
 
-Click [here](https://davidrach.github.io/FlowAwareness_Cyto2026/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
+Click [here](/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
 
 For our Cytometry in R course, click [here](https://umgcccfcsr.github.io/CytometryInR/course/). 
 
