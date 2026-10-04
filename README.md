@@ -1,10 +1,10 @@
-# Abstract
+## Abstract
 
 **Being Everything, Everywhere, All at Once: Open-Source Automation for Situational Awareness in SRLs**
 
-David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2 
+David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2  
 
-*1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA*
+1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA 
 
 Operating a flow cytometry shared resource laboratory (SRL) is the art of daily handling issues as they arise, while staying situationally aware enough to avoid a complete meltdown. Given that time is a precious commodity, tools that can provide timely situational awareness of impending issues and thus permit a staged intervention are highly desirable. With the current fiscal environment, free and open-source software tools could assist these efforts, but need to not impose significant additional burden on the staff. 
 
@@ -12,30 +12,17 @@ Over the last 18 months, we have sequentially designed and implemented enhanced 
 
 These tools have collectively enabled us to monitor user/laboratory instrument usage over time, track cancellations and altered reservations, build a database of markers and fluorophores by users, and determine their panels respective stain indexes and unmixing-dependent spreading (UDS) hotspots. The system spot checks unmixing controls to identify multiple autofluorescences and tandem fluorophore degradation, with a similar process monitoring for debris build up in the fluidic lines. Additionally, the system reports computer storage space occupancy by user, processes the cytometer logs to classify and record the frequency of returned errors, visualizes instrument QC metrics, as well as tracks cell sorter specific metrics by nozzle. 
 
-This framework has expanded our situational awarenes beyond what any individual vendor system can provide. It has allowed staff to intervene proactively—reaching out to users before substantial time, samples, and reagents are wasted—at a scale that would have seemed implausible only a few years ago. By standardizing oversight, reducing operator-dependent variability, and documenting performance trends, the system strengthens rigor and reproducibility across SRL workflows. 
+This framework has expanded our situational awareness beyond what any individual vendor system can provide. It has allowed staff to intervene proactively—reaching out to users before substantial time, samples, and reagents are wasted—at a scale that would have seemed implausible only a few years ago. By standardizing oversight, reducing operator-dependent variability, and documenting performance trends, the system strengthens rigor and reproducibility across SRL workflows. 
 
-We emphasize the piecemeal nature of our implementation, highlight what worked well and and offer lessons learned from our experience in pursuit to orchestrate situational awareness in an SRL environment. 
+We emphasize the piecemeal nature of our implementation, highlight what worked well and offer lessons learned from our experience in pursuit to orchestrate situational awareness in an SRL environment. 
 
-# Slides
+[Code](https://github.com/DavidRach/FlowAwareness_Cyto2026) 
+[Slides](https://davidrach.github.io/FlowAwareness_Cyto2026/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf) 
+[Recording](https://youtu.be/gq8D05KjSsU?si=fBURqJYP8dYg0Hyf)
 
-This is the repository for our Cyto 2026 "Open-source Automation for Situational Awareness in SRLs" parallel talk.  
-
-Click [here](/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
-
-For our Cytometry in R course, click [here](https://umgcccfcsr.github.io/CytometryInR/course/). 
-
-For the InstrumentQC dashboard how-to website, click [here](https://davidrach.github.io/InstrumentQC_Install/)
-
-Click [here](https://github.com/DavidRach/Luciernaga) for information about the Luciernaga R package. 
-
-For information about our Coereba R package, click [here](https://github.com/DavidRach/Coereba)
-
-# GitHub Repository organization. 
-
-Within this GitHub repository due to size limits, we are unable to provide the .svg files that were used to create the poster in [Inkscape](https://inkscape.org/), feel free to reach out to the UMGCCC Flow Cytometry Shared Resource email ("flowcore", "@", "som.umaryland.edu") to get a sharable copy. 
-
-The code to generate QR codes and extract survey comments in R can be found under the code_poster folder. Actual QR codes generated can be found under outputs folder. Images used that were brought in from other sources can be found in the images folder. 
-
-# License
+## License
 
 In our commitment to open-science and open-source, all teaching materials are freely offered under a [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license, while all code examples are offered under the [AGPL3-0](https://www.gnu.org/licenses/agpl-3.0.en.html) copyleft license. 
+
+<br>
+<br>

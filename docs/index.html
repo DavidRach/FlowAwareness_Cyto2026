@@ -186,9 +186,7 @@ gtag('config', 'G-LZ35J3XE4D', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#github-repository-organization." id="toc-github-repository-organization." class="nav-link" data-scroll-target="#github-repository-organization.">GitHub repository organization.</a></li>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
   </ul>
 </nav>
@@ -199,37 +197,25 @@ gtag('config', 'G-LZ35J3XE4D', { 'anonymize_ip': true});
 
 
 
-<p><img src="images/WebsiteBanner.png" class="img-fluid" style="width:100.0%"></p>
 <div style="text-align: right;">
 <p><a href="https://www.gnu.org/licenses/agpl-3.0.en.html"><img src="https://img.shields.io/badge/license-AGPLv3-blue.png" class="img-fluid" alt="AGPL-3.0"></a> <a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" class="img-fluid" alt="CC BY-SA 4.0"></a></p>
 </div>
-<section id="slides" class="level1">
-<h1>Slides</h1>
-<p>This is the repository for our Cyto 2026 “Open-source Automation for Situational Awareness in SRLs” parallel talk.</p>
-<p>Click <a href="./Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf">here</a> to navigate to the .pdf of the poster, which can be downloaded.</p>
-<p>For our Cytometry in R course, click <a href="https://umgcccfcsr.github.io/CytometryInR/course/">here</a>.</p>
-<p>For the InstrumentQC dashboard how-to website, click <a href="https://davidrach.github.io/InstrumentQC_Install/">here</a></p>
-<p>Click <a href="https://github.com/DavidRach/Luciernaga">here</a> for information about the Luciernaga R package.</p>
-<p>For information about our Coereba R package, click <a href="https://github.com/DavidRach/Coereba">here</a></p>
-</section>
-<section id="github-repository-organization." class="level1">
-<h1>GitHub repository organization.</h1>
-<p>Within this GitHub repository due to size limits, we are unable to provide the .svg files that were used to create the poster in <a href="https://inkscape.org/">Inkscape</a>, feel free to reach out to the UMGCCC Flow Cytometry Shared Resource email (“flowcore”, “@”, “som.umaryland.edu”) to get a sharable copy.</p>
-<p>The code to generate QR codes and extract survey comments in R can be found under the code_poster folder. Actual QR codes generated can be found under outputs folder. Images used that were brought in from other sources can be found in the images folder.</p>
-</section>
-<section id="abstract" class="level1">
-<h1>Abstract</h1>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p><strong>Being Everything, Everywhere, All at Once: Open-Source Automation for Situational Awareness in SRLs</strong></p>
 <p>David Rach1,2, Natarajan Ayithan2, Xiaoxuan Fan2</p>
-<p><em>1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA</em></p>
+<p>1 Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, USA 2 Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, USA</p>
 <p>Operating a flow cytometry shared resource laboratory (SRL) is the art of daily handling issues as they arise, while staying situationally aware enough to avoid a complete meltdown. Given that time is a precious commodity, tools that can provide timely situational awareness of impending issues and thus permit a staged intervention are highly desirable. With the current fiscal environment, free and open-source software tools could assist these efforts, but need to not impose significant additional burden on the staff.</p>
 <p>Over the last 18 months, we have sequentially designed and implemented enhanced monitoring tools for all the instruments at our core, using open-source software (R, Python and Rust). These have utilized existing computational resources (as well as computers repurposed following Windows 10 end-of-life) with automation scheduled for off-peak hours to survey for a range of issues across all acquired experiment and .fcs files.</p>
 <p>These tools have collectively enabled us to monitor user/laboratory instrument usage over time, track cancellations and altered reservations, build a database of markers and fluorophores by users, and determine their panels respective stain indexes and unmixing-dependent spreading (UDS) hotspots. The system spot checks unmixing controls to identify multiple autofluorescences and tandem fluorophore degradation, with a similar process monitoring for debris build up in the fluidic lines. Additionally, the system reports computer storage space occupancy by user, processes the cytometer logs to classify and record the frequency of returned errors, visualizes instrument QC metrics, as well as tracks cell sorter specific metrics by nozzle.</p>
-<p>This framework has expanded our situational awarenes beyond what any individual vendor system can provide. It has allowed staff to intervene proactively—reaching out to users before substantial time, samples, and reagents are wasted—at a scale that would have seemed implausible only a few years ago. By standardizing oversight, reducing operator-dependent variability, and documenting performance trends, the system strengthens rigor and reproducibility across SRL workflows.</p>
-<p>We emphasize the piecemeal nature of our implementation, highlight what worked well and and offer lessons learned from our experience in pursuit to orchestrate situational awareness in an SRL environment.</p>
+<p>This framework has expanded our situational awareness beyond what any individual vendor system can provide. It has allowed staff to intervene proactively—reaching out to users before substantial time, samples, and reagents are wasted—at a scale that would have seemed implausible only a few years ago. By standardizing oversight, reducing operator-dependent variability, and documenting performance trends, the system strengthens rigor and reproducibility across SRL workflows.</p>
+<p>We emphasize the piecemeal nature of our implementation, highlight what worked well and offer lessons learned from our experience in pursuit to orchestrate situational awareness in an SRL environment.</p>
+<p><a href="https://github.com/DavidRach/FlowAwareness_Cyto2026">Code</a> <a href="https://davidrach.github.io/FlowAwareness_Cyto2026/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf">Slides</a> <a href="https://youtu.be/gq8D05KjSsU?si=fBURqJYP8dYg0Hyf">Recording</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gq8D05KjSsU?si=LL-tKWn6dXfYubS9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 </section>
-<section id="license" class="level1">
-<h1>License</h1>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
 <p>In our commitment to open-science and open-source, all teaching materials are freely offered under a <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA</a> license, while all code examples are offered under the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL3-0</a> copyleft license.</p>
 <p><br> <br></p>
 <div style="text-align: right;">
