@@ -29,7 +29,7 @@ This framework has expanded our situational awareness beyond what any individual
 We emphasize the piecemeal nature of our implementation, highlight what worked well and offer lessons learned from our experience in pursuit to orchestrate situational awareness in an SRL environment. 
 
 [Code](https://github.com/DavidRach/FlowAwareness_Cyto2026) 
-[Slides](https://davidrach.github.io/FlowAwareness_Cyto2026/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf) 
+[Slides](/Rach_EverythingEverywhereAllAtOnce_Cyto2026.pdf) 
 [Recording](https://youtu.be/gq8D05KjSsU?si=fBURqJYP8dYg0Hyf)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gq8D05KjSsU?si=LL-tKWn6dXfYubS9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
